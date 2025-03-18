@@ -1,5 +1,5 @@
 const canvas = document.querySelector('canvas')
-const c = canvas.getContext('2d')
+const c = canvas.getContext('2d');
 
 window.onresize = function() {
     canvas.width = innerWidth
@@ -53,186 +53,185 @@ const map = [
     ['4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '3']
   ]
   
-  // Additional cases (does not include the power up pellet that's inserted later in the vid)
   map.forEach((row, i) => {
     row.forEach((symbol, j) => {
       switch (symbol) {
         case '-':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
-                x: Boundary.width * j,
-                y: Boundary.height * i
+                x: Boundary.width * 1,
+                y: Boundary.height * 2
               },
-              image: createImage('./img/pipeHorizontal.png')
+           
             })
           )
           break
         case '|':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
-                x: Boundary.width * j,
+                x: Boundary.width * 1,
                 y: Boundary.height * i
               },
-              image: createImage('./img/pipeVertical.png')
+          
             })
           )
           break
         case '1':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
                 x: Boundary.width * j,
                 y: Boundary.height * i
               },
-              image: createImage('./img/pipeCorner1.png')
+        
             })
           )
           break
         case '2':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
                 x: Boundary.width * j,
                 y: Boundary.height * i
               },
-              image: createImage('./img/pipeCorner2.png')
+      
             })
           )
           break
         case '3':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
                 x: Boundary.width * j,
                 y: Boundary.height * i
               },
-              image: createImage('./img/pipeCorner3.png')
+             
             })
           )
           break
         case '4':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
                 x: Boundary.width * j,
                 y: Boundary.height * i
               },
-              image: createImage('./img/pipeCorner4.png')
+              
             })
           )
           break
         case 'b':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
                 x: Boundary.width * j,
                 y: Boundary.height * i
               },
-              image: createImage('./img/block.png')
+           
             })
           )
           break
         case '[':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
                 x: j * Boundary.width,
                 y: i * Boundary.height
               },
-              image: createImage('./img/capLeft.png')
+            
             })
           )
           break
         case ']':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
                 x: j * Boundary.width,
                 y: i * Boundary.height
               },
-              image: createImage('./img/capRight.png')
+           
             })
           )
           break
         case '_':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
                 x: j * Boundary.width,
                 y: i * Boundary.height
               },
-              image: createImage('./img/capBottom.png')
+              
             })
           )
           break
         case '^':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
                 x: j * Boundary.width,
                 y: i * Boundary.height
               },
-              image: createImage('./img/capTop.png')
+          
             })
           )
           break
         case '+':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
                 x: j * Boundary.width,
                 y: i * Boundary.height
               },
-              image: createImage('./img/pipeCross.png')
+              
             })
           )
           break
         case '5':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
                 x: j * Boundary.width,
                 y: i * Boundary.height
               },
               color: 'blue',
-              image: createImage('./img/pipeConnectorTop.png')
+            
             })
           )
           break
         case '6':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
                 x: j * Boundary.width,
                 y: i * Boundary.height
               },
               color: 'blue',
-              image: createImage('./img/pipeConnectorRight.png')
+              image: createImage('')
             })
           )
           break
         case '7':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
                 x: j * Boundary.width,
                 y: i * Boundary.height
               },
               color: 'blue',
-              image: createImage('./img/pipeConnectorBottom.png')
+              image: createImage('')
             })
           )
           break
         case '8':
-          boundaries.push(
+          Boundary.push(
             new Boundary({
               position: {
                 x: j * Boundary.width,
                 y: i * Boundary.height
               },
-              image: createImage('./img/pipeConnectorLeft.png')
+              image: createImage('')
             })
           )
           break
