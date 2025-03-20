@@ -7,7 +7,7 @@ window.onresize = function () {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
-//code is lukes
+
 class Boundary {
     static width = 40
     static height = 40
@@ -76,11 +76,11 @@ let lastKey = ''
 
 const map = [
     ['-', '-', '-', '-', '-', '-', '-'],
-    ['-', ' ', ' ', ' ', ' ', ' ', '-'],
-    ['-', ' ', '-', ' ', '-', ' ', '-'],
-    ['-', ' ', ' ', ' ', ' ', ' ', '-'],
-    ['-', ' ', '-', ' ', '-', ' ', '-'],
-    ['-', ' ', ' ', ' ', ' ', ' ', '-'],
+    ['|', ' ', ' ', ' ', ' ', ' ', '|'],
+    ['|', ' ', '-', ' ', '-', ' ', '|'],
+    ['|', ' ', ' ', ' ', ' ', ' ', '|'],
+    ['|', ' ', '-', ' ', '-', ' ', '|'],
+    ['|', ' ', ' ', ' ', ' ', ' ', '|'],
     ['-', '-', '-', '-', '-', '-', '-']
 ]
 
@@ -88,13 +88,14 @@ const map = [
 map.forEach((row, i) => {
     row.forEach((Symbol, j) => {
         switch (Symbol) {
-            case '-':
+            case '|':
                 boundaries.push(
                     new Boundary({
                         position: {
                             x: Boundary.width * j,
                             y: Boundary.height * i
-                        }
+                        },
+                        image: createImage('./img/pipeHorizontal.png')
                     }))
                 break;
         }
