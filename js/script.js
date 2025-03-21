@@ -467,9 +467,7 @@ for (let i = pellets.length - 1; i > 0; i--) {
     })
 
     player.update();
-    // player.velocity.x=0;
-    // player.velocity.y=0;
-    
+
 
 ghosts.forEach((ghost) => {
     ghost.update();
